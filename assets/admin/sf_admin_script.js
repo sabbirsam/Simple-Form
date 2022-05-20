@@ -1,7 +1,7 @@
 // url:simple_message.admin_ajax
 jQuery(document).ready(function($) {
     $('#list').dataTable() // 
-    $('.delete_ticket').click(function(){
+    $('#list').on('click','.delete_ticket',function (){
 		Swal.fire({
             title: 'Are you sure?',
             text: "You won't be able to revert this!",

@@ -53,7 +53,7 @@
                                                         <td class="text-center">
                                                         <div class="m-4">
                                                             <div class="dropdown action_form">
-                                                                <!-- <a href="#" class="dropdown-toggle" data-bs-toggle="dropdown">Action</a> -->
+                                                    
                                                                 <a class="dropdown-toggle" data-bs-toggle="dropdown">Action</a>
                                                                 <div class="dropdown-menu">
                                                                     <a class="dropdown-item" href="./index.php?page=edit_ticket&id=<?php echo $row->id ?>">Edit</a>
