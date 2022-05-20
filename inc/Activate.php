@@ -1,8 +1,7 @@
 <?php
 /**
- * @package  base-based-filter
+ * 
  */
-
 namespace Inc;
 
 class Activate{

@@ -71,6 +71,10 @@ jQuery(document).ready(function($) {
                             timer: 1500
                         })
                         location.href ='admin.php?page=form_data';
+                    
+                        // setTimeout(function() {
+                        //     location.reload();
+                        // }, 800);
 
                     }
                 })

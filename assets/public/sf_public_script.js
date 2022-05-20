@@ -49,10 +49,6 @@
                 myfile.push($(this).val());
 
             });
-
-            // console.log(myfile);
-            // var data = [ action, input, number, email, textarea, select, radio,  date,checkbox,myfile ];
-            
             
             $.post(sf_contact_form_submission.ajaxurl, {
                 action: 'sf_contact_form_submission', 

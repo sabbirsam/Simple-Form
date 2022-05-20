@@ -4,7 +4,7 @@ namespace Inc;
 
 class Deactivate{
 
-    public static function deactivate(){ //make it static so I can call it direct 
+    public static function deactivate(){ 
         flush_rewrite_rules();
     }
 }

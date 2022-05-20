@@ -11,7 +11,6 @@ class SfShortcode extends BaseController {
     public function sf_form_shortcode($atts){
         
         $shortcodeID = isset($atts['id']) ? intval($atts['id']) : null;
-       
         global $wpdb;
         $wpdb->hide_errors();
         $table=$wpdb->prefix. 'simple_form_tables';
@@ -37,17 +36,11 @@ class SfShortcode extends BaseController {
         
         $arr_values = $results[0]->form_fields;
         $form_data= json_decode($arr_values, true );
-
         $html = '';
-
         $html .= '<form method="POST" enctype="multipart/form-data" id="qbfSearch"> 
         <div class="qbf_d_table">';
-        
-
         foreach ($form_data as $key => $arr_values) {
-
             foreach ($arr_values as $v_key => $values) {
-                // print_r( $values );
                 $access = $values['access'] ?? null;
                 $className = $values['className'] ?? null;
                 $description = $values['description'] ?? null;
@@ -71,15 +64,12 @@ class SfShortcode extends BaseController {
                 $_text = $values['type'] ?? null;  
 
                 if ($_text == 'text') {
-
                     if ($subtype == 'text') {
-    
                         if ($_text == 'text' &&  $required == 'false') {
                             include (dirname(__FILE__).'/Template/Text_Field/text_false.php');
                         } elseif ($_text == 'text' &&  $required == 'true') {
                             include (dirname(__FILE__).'/Template/Text_Field/text_true.php');
                         }
-    
                     } elseif ($subtype == 'search') {
                         if ($subtype == 'search' &&  $required == 'false') {
     
@@ -88,9 +78,7 @@ class SfShortcode extends BaseController {
                         } elseif ($subtype == 'search' &&  $required == 'true') {
                             include(dirname(__FILE__).'/Template/Text_Field/search_true.php'); //used for category and input
                         }
-    
                     } 
-                    
                     elseif ($subtype == 'password') {
     
                         if ($subtype == 'password' &&  $required == 'false') {

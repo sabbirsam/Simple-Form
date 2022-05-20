@@ -1,4 +1,3 @@
-// url:simple_message.admin_ajax
 jQuery(document).ready(function($) {
     $('#list').dataTable() // 
     $('#list').on('click','.delete_ticket',function (){

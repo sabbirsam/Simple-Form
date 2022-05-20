@@ -30,9 +30,6 @@ use Inc\DbTables;
 use Inc\SaveTablesData;
 use Inc\SfShortcode;
 
-
-
-
 if(!class_exists('SimpleForm')){
     class SimpleForm{
         public $simple_form_base;
@@ -41,44 +38,31 @@ if(!class_exists('SimpleForm')){
             $this->simple_form_base = plugin_basename(__FILE__); 
         }
         function register(){
-            add_action("plugins_loaded", array( $this, 'simple_form_load' ));
-            
-            
+            add_action("plugins_loaded", array( $this, 'simple_form_load' )); 
         }
         function simple_form_load(){
             load_plugin_textdomain('simple_form', false,dirname(__FILE__)."languages");
         }
-
         /**
          * Classes 
          */
         public function includes() {
-            new AdminDashboard();
-            
+            new AdminDashboard(); 
             $enqueue=new Enqueue();
             $enqueue->register();
-            
             new BaseController();
-
             new AjaxHandler();
-            
             $create_table = new DbTables();
             $save_table = new SaveTablesData();
-            
             new SfShortcode();
-          
         }
-
         function activate(){   
             Activate::activate();
         }
         function deactivate(){ 
             Deactivate::deactivate(); 
         }
-
     }
-
-    
     $simpleform = new SimpleForm;
     $simpleform ->register();
     

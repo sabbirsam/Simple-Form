@@ -28,6 +28,16 @@ class AjaxHandler {
          */
         add_action( 'wp_ajax_sf_contact_form_submission', array( $this, 'sf_contact_form_submission' ) ); 
         add_action("wp_ajax_nopriv_sf_contact_form_submission", array( $this, "sf_contact_form_submission"));
+        /**
+         * Form EDIT
+         */
+        add_action( 'wp_ajax_edit_data_id', array( $this, 'edit_data_id' ) ); 
+        add_action("wp_ajax_nopriv_edit_data_id", array( $this, "edit_data_id"));
+        /**
+         * update EDIT Data
+         */
+        add_action( 'wp_ajax_edit_data_id', array( $this, 'edit_data_id' ) ); 
+        add_action("wp_ajax_nopriv_edit_data_id", array( $this, "edit_data_id"));
         
     }
 
@@ -59,6 +69,14 @@ class AjaxHandler {
     function sf_contact_form_submission() {
         $sf_contact_form_submission = new MessageCreation();
         $sf_contact_form_submission->sf_contact_form_submission();
+        
+    }
+    /**
+     * Form EDIT
+    */
+    function edit_data_id() {
+        $edit_data_id = new MessageCreation();
+        $edit_data_id->edit_data_id();
         
     }
 

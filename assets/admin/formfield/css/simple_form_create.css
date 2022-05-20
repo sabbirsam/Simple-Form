@@ -132,3 +132,9 @@ div#create_form_btn {
 .qbf_tabs a {
     text-decoration: none;
 }
+
+/* Hide button temp  */
+li#add-page-tab {
+    display: none;
+}
+

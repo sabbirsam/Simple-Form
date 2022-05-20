@@ -22,10 +22,14 @@ class MessageCreation {
          * Form Submission
          */
         $this->sf_contact_form_submission();
+        /**
+         * Form EDIT
+         */
+        $this->edit_data_id();
     }
 
     /**
-     * Test
+     * delete
      */
     public function message_creation() {
 
@@ -52,8 +56,11 @@ class MessageCreation {
 
         if ($_POST['action'] == 'simple_message_form_submission') {
            
-            $sanitizedData = $_POST['result'];
-            $formData =  $_POST['form_field'] ;
+            $sanitizedData = isset( $_POST['result']) ? $_POST['result'] :'';
+            $formData =  isset( $_POST['form_field']) ? $_POST['form_field'] : '' ;
+            $Data_ID = isset( $_POST['id']) ? $_POST['id'] :'';
+            $Data_Name = isset($_POST['f_name'])?$_POST['f_name']:'';
+            $Data_update_result = isset($_POST['update_results'])?$_POST['update_results']:'';
             
             if ($sanitizedData) {
    
@@ -61,13 +68,33 @@ class MessageCreation {
                
                 date_default_timezone_set('Asia/Dhaka');
                 $date = date('Y-m-d H:i:s');
-
                 global $wpdb;
                 $table=$wpdb->prefix. 'simple_form_tables';
                 $data = array('form_name' => $formData, 'form_fields' => $jdata, 'time' => $date);
                 $format = array('%s','%s');
                 $wpdb->insert($table,$data,$format);
                 $save = $wpdb->insert_id;
+            }
+
+            /**
+             * Update edit
+             */
+            if ($Data_ID) {
+
+                $Data_ID = $_POST['id'];
+                $Data_Name = $_POST['f_name'];
+                $Data_update_result = $_POST['update_results']; // this need to add [] 
+                $update_data = array($Data_update_result);
+
+                $up_data= json_encode($update_data, true);         
+                date_default_timezone_set('Asia/Dhaka');
+                $u_dates = date('Y-m-d H:i:s');
+                global $wpdb;
+                $table=$wpdb->prefix. 'simple_form_tables';
+                $u_data = array('form_name' => $Data_Name, 'form_fields' => $up_data, 'time' => $u_dates);
+                $condition = array('id'=>$Data_ID); 
+                $wpdb->update($table,$u_data,$condition); 
+                $save = $wpdb->insert_id;  
             }
 
             wp_die();
@@ -90,8 +117,32 @@ class MessageCreation {
                 $table=$wpdb->prefix. 'simple_form_tables';
                 $wpdb->delete( $table, array( 'id' => $df_delete_data ) );               
             }
+            wp_die();
+        }
 
+    }
+     /**
+     * Form EDIT
+     */
+    public function edit_data_id() {
 
+        if ($_POST['action'] == 'edit_data_id') {
+            $editID = $_POST['result'];
+            $sf_editID = $postID = isset($editID) ? intval($editID) : null;
+            global $wpdb;
+            $wpdb->hide_errors();
+            $table=$wpdb->prefix. 'simple_form_tables';
+            $results = $wpdb->get_results(
+                "SELECT `form_fields` from $table WHERE id =$sf_editID"
+            );
+        
+            foreach($results as $row)
+            {   }
+            $udata= $row->form_fields;
+            $trimJson = substr($udata, 1, strlen($udata) - 2);
+            echo $trimJson;
+            // set_transient( 'sf_current_edit_data', $trimJson, 86400 );    
+            // set_transient( 'sf_current_edit_data', $trimJson, 300 );  
             wp_die();
         }
 
@@ -117,8 +168,6 @@ class MessageCreation {
             $myfile = $_POST['myfile'] ?? '';
 
             $sf_user_data = array(
-                // 'action'=>$action ?: false,
-                // 'data_id_val'=>$data_id_val ?: false,
                 'input'=>$input ?: false,
                 'number'=>$number ?: false,
                 'email'=>$email ?: false,
