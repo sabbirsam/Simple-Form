@@ -1,0 +1,223 @@
+
+.sec-title-style1 {
+    position: relative;
+    display: block;
+    margin-top: -9px;
+    padding-bottom: 50px;
+}
+
+.sec-title-style1.max-width {
+    position: relative;
+    display: block;
+    max-width: 770px;
+    margin: -9px auto 0;
+    padding-bottom: 52px;
+}
+
+.sec-title-style1.pabottom50 {
+    padding-bottom: 42px;
+}
+
+.sec-title-style1 .title {
+    position: relative;
+    display: block;
+    color: #131313;
+    font-size: 36px;
+    line-height: 46px;
+    font-weight: 700;
+    text-transform: uppercase;
+}
+
+.sec-title-style1 .title.clr-white {
+    color: #ffffff;
+}
+
+.sec-title-style1 .decor {
+    position: relative;
+    display: block;
+    width: 70px;
+    height: 5px;
+    margin: 19px 0 0;
+}
+
+.sec-title-style1 .decor:before {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    width: 5px;
+    height: 5px;
+    background: #FFA500;
+    border-radius: 50%;
+    content: "";
+}
+
+.sec-title-style1 .decor:after {
+    position: absolute;
+    top: 0;
+    right: 10px;
+    bottom: 0;
+    width: 5px;
+    height: 5px;
+    background: #FFA500;
+    border-radius: 50%;
+    content: "";
+}
+
+.sec-title-style1 .decor span {
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    width: 50px;
+    height: 1px;
+    background: #FFA500;
+    margin: 2px 0;
+}
+
+.sec-title-style1 .text {
+    position: relative;
+    display: block;
+    margin: 7px 0 0;
+}
+
+.sec-title-style1 .text p {
+    position: relative;
+    display: inline-block;
+    padding: 0 15px;
+    color: #131313;
+    font-size: 14px;
+    line-height: 16px;
+    font-weight: 700;
+    text-transform: uppercase;
+    margin: 0;
+}
+
+.sec-title-style1 .text.clr-yellow p {
+    color: #FFA500;
+}
+
+.sec-title-style1 .text .decor-left {
+    position: relative;
+    top: -2px;
+    display: inline-block;
+    width: 70px;
+    height: 5px;
+    background: transparent;
+}
+
+.sec-title-style1 .text .decor-left span {
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    width: 50px;
+    height: 1px;
+    background: #FFA500;
+    content: "";
+    margin: 2px 0;
+}
+
+.sec-title-style1 .text .decor-left:before {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    width: 5px;
+    height: 5px;
+    background: #FFA500;
+    border-radius: 50%;
+    content: "";
+}
+
+.sec-title-style1 .text .decor-left:after {
+    position: absolute;
+    top: 0;
+    right: 10px;
+    bottom: 0;
+    width: 5px;
+    height: 5px;
+    background: #FFA500;
+    border-radius: 50%;
+    content: "";
+}
+
+.sec-title-style1 .text .decor-right {
+    position: relative;
+    top: -2px;
+    display: inline-block;
+    width: 70px;
+    height: 5px;
+    background: transparent;
+}
+
+.sec-title-style1 .text .decor-right span {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    width: 50px;
+    height: 1px;
+    background: #FFA500;
+    content: "";
+    margin: 2px 0;
+}
+
+.sec-title-style1 .text .decor-right:before {
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    width: 5px;
+    height: 5px;
+    background: #FFA500;
+    border-radius: 50%;
+    content: "";
+}
+
+.sec-title-style1 .text .decor-right:after {
+    position: absolute;
+    top: 0;
+    left: 10px;
+    bottom: 0;
+    width: 5px;
+    height: 5px;
+    background: #FFA500;
+    border-radius: 50%;
+    content: "";
+}
+
+.sec-title-style1 .bottom-text {
+    position: relative;
+    display: block;
+    padding-top: 16px;
+}
+
+.sec-title-style1 .bottom-text p {
+    color: #848484;
+    font-size: 16px;
+    line-height: 26px;
+    font-weight: 400;
+    margin: 0;
+}
+
+.sec-title-style1 .bottom-text.clr-gray p {
+    color: #cdcdcd;
+}
+
+/* Form data json card and title end  */
+tr.form_data_json {
+    text-align: center;
+}
+td.form_data_json{
+    text-align: center;
+}
+
+/* data table  */
+div.dataTables_wrapper div.dataTables_length select {
+    width: 60px !important;
+}
+.dropdown.action_form a.dropdown-toggle{
+    color: #000000;
+    font-weight: bold;
+}
