@@ -12,7 +12,7 @@
                                 <table class="table table-hover table-bordered" id="list">
                                     <colgroup>
                                         <col width="5%">
-                                        <col width="5%">
+                                        <col width="15%">
                                         <col width="15%">
                                         <!-- <col width="35%"> -->
                                         <col width="20%">
@@ -43,7 +43,9 @@
                                                     ?>
                                                         <tr>
                                                         <th class="text-center"><?php echo $i++ ?></th>
-                                                        <th class="text-center"><?php echo $row->id; ?></th>
+
+                                                        <th id="copy-id<?php echo $row->id?>" class="text-center click-to-copy"><?php echo "[sf_form id=".$row->id."]" ; ?></th>
+                                                      
                                                         <th class="text-center"><?php echo $row->form_name; ?></th>
                                                         <!-- <th class="text-center"><?php echo $row->form_fields; ?></th> -->
                                                         <td class="form_data_json"><b><?php echo date("M d, Y",strtotime($row->time)) ?></b></td>
@@ -51,10 +53,11 @@
                                                         <td class="text-center">
                                                         <div class="m-4">
                                                             <div class="dropdown action_form">
-                                                                <a href="#" class="dropdown-toggle" data-bs-toggle="dropdown">Action</a>
+                                                                <!-- <a href="#" class="dropdown-toggle" data-bs-toggle="dropdown">Action</a> -->
+                                                                <a class="dropdown-toggle" data-bs-toggle="dropdown">Action</a>
                                                                 <div class="dropdown-menu">
                                                                     <a class="dropdown-item" href="./index.php?page=edit_ticket&id=<?php echo $row->id ?>">Edit</a>
-                                                                    <a class="dropdown-item delete_ticket" href="javascript:void(0)" data-id="<?php $row->id ?>">Delete</a>
+                                                                    <a class="dropdown-item delete_ticket" data-id="<?php echo $row->id; ?>" data-nonce="<?php echo wp_create_nonce('sf_delete_post_nonce') ?>" data-modal-delete-id="popup" class="sd_delete-post" href="#" >Delete</a>
                                                                 </div>
                                                             </div>
                                                         </div>

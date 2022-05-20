@@ -205,13 +205,6 @@
     color: #cdcdcd;
 }
 
-/* Form data json card and title end  */
-tr.form_data_json {
-    text-align: center;
-}
-td.form_data_json{
-    text-align: center;
-}
 
 /* data table  */
 div.dataTables_wrapper div.dataTables_length select {
@@ -221,3 +214,5 @@ div.dataTables_wrapper div.dataTables_length select {
     color: #000000;
     font-weight: bold;
 }
+
+/* shortcode copy button  */

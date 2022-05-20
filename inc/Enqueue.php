@@ -51,14 +51,28 @@ class Enqueue extends BaseController{
          * Data
          */
         if("simple-form_page_form_data" == $screen ){
+
+            // wp_enqueue_script( 'simple_form_main2_jss', $this->plugin_url . 'assets/admin/formfield/js/form_data.js' );
+            wp_register_script( 'simple_form_main2_jss', $this->plugin_url . 'assets/admin/formfield/js/form_data.js',array('jquery'),1.0,true );
+
+            wp_localize_script( 'simple_form_main2_jss', 'simple_message_delete_form', array( 
+
+                'ajaxurl'=>admin_url("admin-ajax.php", null)
+            ) );
+            wp_enqueue_script('jquery');
+            wp_enqueue_script('simple_form_main2_jss');
+
+
+            wp_enqueue_script( 'simple_form_sweetalert_js', $this->plugin_url . 'assets/admin/formfield/js/sweetalert2@11.js',array('jquery'),1.0,true );
             wp_enqueue_script( 'simple_form_query_dataTables_min_js', $this->plugin_url . 'assets/admin/data-table/jquery.dataTables.min.js',array('jquery'),1.0,true );// datatable
             wp_enqueue_script( 'simple_form_query_jquery-3.5.1.js', $this->plugin_url . 'assets/admin/data-table/jquery-3.5.1.js',array('jquery'),1.0,true ); // datatable
-            wp_enqueue_script( 'simple_form_query_dataTables_bootstrap4', $this->plugin_url . 'assets/admin/data-table/dataTables.bootstrap4.min.js',array('jquery'),1.0,true );// datatable
-            wp_enqueue_script( 'simple_form_main2_jss', $this->plugin_url . 'assets/admin/formfield/js/form_data.js' );
+           
+
             wp_enqueue_script( 'simple_form_bootstrap2_min_js', $this->plugin_url . 'assets/admin/formfield/js/bootstrap.min.js',array('jquery'),1.0,true );
             wp_enqueue_script( 'simple_form_bootstrap.bundle.min.js', $this->plugin_url . 'assets/admin/formfield/js/bootstrap.bundle.min.js',array('jquery'),1.0,true );//for action to edit/delete
             wp_enqueue_style( 'simple_form_jquery_dataTables.min', $this->plugin_url . 'assets/admin/data-table/jquery.dataTables.min.css' ); // datatable
             wp_enqueue_style( 'simple_form_main2_css_style', $this->plugin_url . 'assets/admin/formfield/css/form_data.css' );
+            // wp_enqueue_style( 'simple_form_font-awesome.min.css', $this->plugin_url . 'assets/admin/formfield/css/fontawesome.min.js' ,array('jquery'),1.0,true );// fontawesome
             wp_enqueue_style( 'simple_form_bootstrap.css', $this->plugin_url . 'assets/admin/formfield/css/bootstrap.min.css' );// datatable
             wp_enqueue_style( 'simple_form_dataTables.bootstrap4.min.css', $this->plugin_url . 'assets/admin/data-table/dataTables.bootstrap4.min.css' ); // datatable
         }

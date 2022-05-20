@@ -64,18 +64,17 @@ jQuery(document).ready(function($) {
                     type: "post",
                     success: function() {
                         Swal.fire({
-                            // position: 'top-end',
                             position: 'center',
                             icon: 'success',
                             title: 'Your Form has been saved',
                             showConfirmButton: false,
                             timer: 1500
                         })
-                        $("#success").show();
-
-                        setTimeout(function() {
-                            location.reload();
-                        }, 800);
+                        location.href ='admin.php?page=form_data';
+                    
+                        // setTimeout(function() {
+                        //     location.reload();
+                        // }, 800);
 
                     }
                 })
