@@ -215,4 +215,7 @@ div.dataTables_wrapper div.dataTables_length select {
     font-weight: bold;
 }
 
-/* shortcode copy button  */
+/* Table extra border remove  */
+th.user_input {
+    border: none !important;
+}

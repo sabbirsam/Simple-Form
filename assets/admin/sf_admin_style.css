@@ -341,7 +341,7 @@
     position: relative;
     display: block;
     background: #ffffff;
-    padding: 100px 60px 80px;
+    /* padding: 100px 60px 80px; */
     -webkit-box-shadow: 0px 3px 8px 2px #ededed;
     box-shadow: 0px 3px 8px 2px #ededed;
     z-index: 3;

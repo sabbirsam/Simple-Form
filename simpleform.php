@@ -27,6 +27,8 @@ use Inc\AdminDashboard;
 use Inc\BaseController;
 use Inc\AjaxHandler;
 use Inc\DbTables;
+use Inc\SaveTablesData;
+use Inc\SfShortcode;
 
 
 
@@ -59,10 +61,11 @@ if(!class_exists('SimpleForm')){
             new BaseController();
 
             new AjaxHandler();
-
+            
             $create_table = new DbTables();
-            // $create_table->create_tables();
-
+            $save_table = new SaveTablesData();
+            
+            new SfShortcode();
           
         }
 

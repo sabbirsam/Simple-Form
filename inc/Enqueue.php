@@ -13,7 +13,7 @@ class Enqueue extends BaseController{
 
     public function admin_enqueue($screen){
         /**
-         * Dashboard
+         * Dashboard user input data show
          */
         if("toplevel_page_simple_form" == $screen 
         // || "dashboard_page_create_form" == $screen
@@ -21,12 +21,28 @@ class Enqueue extends BaseController{
             wp_enqueue_style( 'simple_form_admin_css', $this->plugin_url .'assets/admin/sf_admin_style.css');
             wp_enqueue_script( 'simple_form_admin_js', $this->plugin_url .'assets/admin/sf_admin_script.js', array('jquery'),1.0,true );
             
-            wp_localize_script( 'simple_form_admin_js', 'simple_message', array(
+            wp_localize_script( 'simple_form_admin_js', 'show_user_inputed_data', array(
                 
                 'ajaxurl'=>admin_url("admin-ajax.php", null)
                 ) );
                 wp_enqueue_script('jquery');
                 wp_enqueue_script('simple_form_admin_js');    
+
+            /**
+             * Others
+             */
+            wp_enqueue_script( 'simple_form_sweetalert_js', $this->plugin_url . 'assets/admin/formfield/js/sweetalert2@11.js',array('jquery'),1.0,true );
+            wp_enqueue_script( 'simple_form_query_dataTables_min_js', $this->plugin_url . 'assets/admin/data-table/jquery.dataTables.min.js',array('jquery'),1.0,true );// datatable
+            wp_enqueue_script( 'simple_form_query_jquery-3.5.1.js', $this->plugin_url . 'assets/admin/data-table/jquery-3.5.1.js',array('jquery'),1.0,true ); // datatable
+           
+
+            wp_enqueue_script( 'simple_form_bootstrap2_min_js', $this->plugin_url . 'assets/admin/formfield/js/bootstrap.min.js',array('jquery'),1.0,true );
+            wp_enqueue_script( 'simple_form_bootstrap.bundle.min.js', $this->plugin_url . 'assets/admin/formfield/js/bootstrap.bundle.min.js',array('jquery'),1.0,true );//for action to edit/delete
+            wp_enqueue_style( 'simple_form_jquery_dataTables.min', $this->plugin_url . 'assets/admin/data-table/jquery.dataTables.min.css' ); // datatable
+            wp_enqueue_style( 'simple_form_main2_css_style', $this->plugin_url . 'assets/admin/formfield/css/form_data.css' );
+            wp_enqueue_style( 'simple_form_bootstrap.css', $this->plugin_url . 'assets/admin/formfield/css/bootstrap.min.css' );// datatable
+            wp_enqueue_style( 'simple_form_dataTables.bootstrap4.min.css', $this->plugin_url . 'assets/admin/data-table/dataTables.bootstrap4.min.css' ); // datatable
+                 
         }
          /**
          * Form
@@ -80,8 +96,18 @@ class Enqueue extends BaseController{
     }
     
     public function public_enqueue(){
-        wp_enqueue_script( 'simple_form_public_js',  $this->plugin_url .'assets/public/sf_public_script.js', array('jquery'),1.0,true );
-        wp_enqueue_style( 'simple_form_public_css',  $this->plugin_url .'assets/public/sf_public_style.css');
+        
+            wp_enqueue_script( 'simple_form_sweetalerts_js', $this->plugin_url . 'assets/admin/formfield/js/sweetalert2@11.js',array('jquery'),1.0,true );
+
+            wp_enqueue_style( 'simple_form_public_css',  $this->plugin_url .'assets/public/sf_public_style.css');
+
+            wp_enqueue_script( 'simple_form_public_js',  $this->plugin_url .'assets/public/sf_public_script.js', array('jquery'),1.0,true );
+
+            wp_localize_script( 'simple_form_public_js', 'sf_contact_form_submission', array(
+
+                'ajaxurl'=>admin_url("admin-ajax.php", null)
+            ) );
+            wp_enqueue_script('jquery');
     }
 
 }
