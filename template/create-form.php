@@ -12,7 +12,7 @@
             <div class="row">
                 <div class="col-md-8">
                     <div class="saveDataWrap create_field_save_btn" >
-                        <input id="form_name" class="form-name" name="form_name" placeholder="Give a form name" type="text" AUTOCOMPLETE=OFF /> 
+                        <input id="form_name" class="form-name" name="form_name" placeholder="Form name" type="text" AUTOCOMPLETE=OFF /> 
                     </div>
                 </div> 
             </div>

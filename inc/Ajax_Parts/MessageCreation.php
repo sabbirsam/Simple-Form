@@ -164,7 +164,7 @@ class MessageCreation {
             $select = $_POST['select'] ?? '';
             $radio = $_POST['radio']?? '';
             $checkbox = $_POST['checkbox'] ?? '';
-            $date = $_POST['date'];
+            $date = $_POST['date'] ?? '';
             $myfile = $_POST['myfile'] ?? '';
 
             $sf_user_data = array(
@@ -178,6 +178,7 @@ class MessageCreation {
                 'date'=>$date ?: false,
                 'myfile'=>$myfile ?: false,
             );
+
             if ($sf_user_data) { 
                 $jdata= json_encode($sf_user_data , true);
                 date_default_timezone_set('Asia/Dhaka');

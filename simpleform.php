@@ -1,11 +1,11 @@
 <?php
 /*
 Plugin Name: Simple Form
-Plugin URI: http://wppool.dev
+Plugin URI: https://www.techsambd.com/simple_form
 Description: Base plugin for Initial Work.
 Version: 1.0.0
-Author: WPPOOL
-Author URI: http://wppool.dev
+Author: SABBIRSAM
+Author URI: https://www.techsambd.com
 Requires at least: 5.0
 Requires PHP:      5.4
 License:           GPL-2.0+
