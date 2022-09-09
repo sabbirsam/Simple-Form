@@ -8,7 +8,7 @@
                             <div class="sec-title-style1 float-left">
                                 <div class="text">
                                     <div class="decor-left"><span></span></div>
-                                    <p>Feel free to contact us. </p>
+                                    <p><?php _e("Feel free to contact us. ","simple_form");?></p>
                                 </div>
                             </div>
                             <table class="table table-hover table-bordered" id="list">
@@ -21,11 +21,11 @@
                                 </colgroup>
                                 <thead>
                                     <tr class="form_data_json">
-                                        <th>#</th>
-                                        <th>Shortcode</th>
-                                        <th>Form Name</th>
-                                        <th>Date</th>
-                                        <th>Action</th>
+                                        <th><?php _e("#","simple_form");?></th>
+                                        <th><?php _e("Shortcode","simple_form");?></th>
+                                        <th><?php _e("Form Name","simple_form");?></th>
+                                        <th><?php _e("Date","simple_form");?></th>
+                                        <th><?php _e("Action","simple_form");?></th>
                                     </tr>
                                 </thead>
                                 <tbody>
@@ -53,17 +53,21 @@
                                         <td class="text-center">
                                             <div class="m-4">
                                                 <div class="dropdown action_form">
-                                                    <a class="dropdown-toggle" data-bs-toggle="dropdown">Action</a>
+                                                    <!-- <a class="dropdown-toggle" data-bs-toggle="dropdown">Action</a> -->
+                                                    <button class="btn btn-primary dropdown-toggle" type="button"
+                                                        data-bs-toggle="dropdown" aria-expanded="false">
+                                                        <?php _e("Action","simple_form");?>
+                                                    </button>
                                                     <div class="dropdown-menu">
                                                         <a class="dropdown-item js-open-modal"
                                                             data-name="<?php echo esc_html($row->form_name) ?>"
                                                             data-modal-id="popup" href="#"
-                                                            data-id="<?php echo esc_html($row->id) ?>">Edit</a>
+                                                            data-id="<?php echo esc_html($row->id) ?>"><?php _e("Edit","simple_form");?></a>
                                                         <a class="dropdown-item delete_ticket"
                                                             data-id="<?php echo esc_html($row->id); ?>"
                                                             data-nonce="<?php echo wp_create_nonce('SFSF_delete_post_nonce') ?>"
                                                             data-modal-delete-id="popup" class="sd_delete-post"
-                                                            href="#">Delete</a>
+                                                            href="#"><?php _e("Delete","simple_form");?></a>
                                                     </div>
                                                 </div>
                                             </div>
@@ -84,7 +88,7 @@
 <div id="popup" class="modal-box">
     <header>
         <a href="#" class="js-modal-close close">×</a>
-        <h3><a href="#">Edit</a> Fields</h3>
+        <h3><a href="#"><?php _e("Edit","simple_form");?></a> <?php _e("Fields","simple_form");?></h3>
     </header>
     <div class="modal-body">
         <div id="build-wrap">
@@ -92,7 +96,8 @@
                 <div class="saveDataWrap create_field_save_btn">
                     <input id="form_name" class="form-name" name="form_name" placeholder="Give a form name" type="text"
                         AUTOCOMPLETE=OFF />
-                    <button class="btn btn-primary js-open-modal saveData" id="saveData" type="button">Update</button>
+                    <button class="btn btn-primary js-open-modal saveData" id="saveData"
+                        type="button"><?php _e("Update","simple_form");?></button>
                 </div>
             </div>
         </div>
