@@ -1,0 +1,160 @@
+.saveDataWrap input#form_name {
+    text-decoration: none;
+    font-family: "Century Gothic", Helvetica, sans-serif;
+    font-size: 22px;
+    -moz-box-shadow: 0px 0px 3px #aaa;
+    -webkit-box-shadow: 0px 0px 3px #aaa;
+    box-shadow: 0px 0px 3px #aaa;
+    border-radius: 9px;
+    color: rgb(0, 0, 0);
+}
+
+
+button.js-open-modal {
+    position: absolute;
+    right: 31px;
+    top: 58px;
+    border-radius: 5px;
+    background-color: #8b13c2;
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    font-weight: bold;
+    font-family: "Century Gothic", Helvetica, sans-serif;
+    font-size: 18px;
+}
+
+button.js-open-modal:hover {
+    background-color: #ad0cf8;
+    font-size: 19px;
+}
+
+ul#tabs {
+    display: flex;
+}
+
+li.ui-state-default.ui-corner-top.ui-tabs-active.ui-state-active {
+    border-bottom: 3px solid #aa3a3a;
+}
+
+li.ui-state-default.ui-corner-top {
+    text-decoration: none;
+    padding: 7px 25px;
+    text-shadow: 0 1px 1px #777;
+    font-weight: bold;
+    font-family: "Century Gothic", Helvetica, sans-serif;
+    font-size: 22px;
+    -moz-box-shadow: 0px 0px 3px #aaa;
+    -webkit-box-shadow: 0px 0px 3px #aaa;
+    box-shadow: 0px 0px 3px #aaa;
+    background: #ffffff;
+    margin-right: 9px;
+    border-radius: 9px;
+    color: white!important;
+    border: unset;
+    list-style: none;
+}
+
+li.ui-state-default.ui-corner-top:hover {
+    border: unset;
+    background: #d8d8d8;
+    color: #666;
+    text-shadow: 1px 1px 1px #fff;
+}
+
+li.ui-state-default.ui-corner-top a:hover {
+    text-decoration: none;
+}
+
+/*Tabs*/
+
+.qbf_tabs {
+    margin: 20px;
+}
+
+.qbf_tabs a {
+    font-size: 18px;
+    color: #524e95!important;
+    font-weight: bold;
+}
+
+.tab-content {
+    margin-top: 17px;
+}
+
+
+button.no.btn.btn-danger.btn-sm:hover {
+    background-color: #9fcefd;
+}
+
+button.yes.btn.btn-success.btn-sm:hover {
+    background-color: #9fcefd;
+}
+
+
+/*Create/ save button */
+
+div#create_form_btn {
+    position: absolute;
+    right: 34px;
+}
+
+.saveDataWrap a {
+    text-decoration: none;
+    padding: 7px 25px;
+    text-shadow: 0 1px 1px #777;
+    font-weight: bold;
+    font-family: "Century Gothic", Helvetica, sans-serif;
+    font-size: 22px;
+    -moz-box-shadow: 0px 0px 3px #aaa;
+    -webkit-box-shadow: 0px 0px 3px #aaa;
+    box-shadow: 0px 0px 3px #aaa;
+    background: #4797ED;
+    border-radius: 9px;
+    color: white;
+}
+
+.saveDataWrap a:hover {
+    background: #d8d8d8;
+    color: rgb(231, 229, 229);
+    text-shadow: 1px 1px 1px #fff;
+    text-decoration: none;
+}
+
+.form-wrap.form-builder .frmb-control {
+    font-family: "Century Gothic", Helvetica, sans-serif;
+    font-size: 16px;
+}
+.qbf_tabs a {
+    text-decoration: none;
+}
+
+/* Hide button temp  */
+li#add-page-tab {
+    display: none;
+}
+
+
+/* Hide for pro field create panel field */
+li.formbuilder-icon-checkbox-group.input-control.input-control-6.ui-sortable-handle,
+li.formbuilder-icon-file.input-control.input-control-10.ui-sortable-handle,
+li.formbuilder-icon-hidden.input-control.input-control-2.ui-sortable-handle,
+li.formbuilder-icon-autocomplete.input-control.input-control-0.ui-sortable-handle,
+li.formbuilder-icon-radio-group.input-control.input-control-7.ui-sortable-handle
+ {
+    display: none !important;
+}
+
+/* below extra button remove  */
+.form-wrap.form-builder .form-actions, button#frmb-1654252101410-save-action {
+    display: none;
+}
+
+.form-wrap.form-builder .btn-group{
+    display: none !important;
+}
+
