@@ -3,7 +3,7 @@
  * Plugin Name: Simple Form
  *
  * @author            Sabbir Sam
- * @copyright         2022- Sabbir Sam, Kevin Chappell
+ * @copyright         2022- Sabbir Sam, Kevin Chappell from fromBuilder
  * @license           GPL-2.0-or-later
  *
  * @wordpress-plugin
