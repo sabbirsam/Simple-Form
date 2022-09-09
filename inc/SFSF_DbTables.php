@@ -1,7 +1,7 @@
 <?php
 namespace Inc;
 
-final class DbTables {
+final class SFSF_DbTables {
     private $connection;
     private $sql;
     public function __construct() {

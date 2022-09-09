@@ -2,7 +2,7 @@
 
 namespace Inc;
 
-final class SaveTablesData {
+final class SFSF_SaveTablesData {
     private $connection;
     private $sql;
     public function __construct() {
