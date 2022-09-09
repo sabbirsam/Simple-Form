@@ -1,9 +1,9 @@
 <?php
 
 namespace Inc;
-use \Inc\Ajax_Parts\SF_MessageCreation;
+use \Inc\Ajax_Parts\SFSF_MessageCreation;
 
-class SF_AjaxHandler {
+class SFSF_AjaxHandler {
 
     public function __construct() {
         $this->events();
@@ -26,8 +26,8 @@ class SF_AjaxHandler {
          /**
          * Form Submission
          */
-        add_action( 'wp_ajax_sf_contact_form_submission', array( $this, 'sf_contact_form_submission' ) ); 
-        add_action("wp_ajax_nopriv_sf_contact_form_submission", array( $this, "sf_contact_form_submission"));
+        add_action( 'wp_ajax_SFSF_contact_form_submission', array( $this, 'SFSF_contact_form_submission' ) ); 
+        add_action("wp_ajax_nopriv_SFSF_contact_form_submission", array( $this, "SFSF_contact_form_submission"));
         /**
          * Form EDIT
          */
@@ -43,7 +43,7 @@ class SF_AjaxHandler {
 
     /**Demo check Creation */
     function message_creation() {
-        $message_creation = new SF_MessageCreation();
+        $message_creation = new SFSF_MessageCreation();
         $message_creation->message_creation();
         
     }
@@ -51,7 +51,7 @@ class SF_AjaxHandler {
      * Form create
      */
     function simple_message_form_submission() {
-        $simple_message_form_submission = new SF_MessageCreation();
+        $simple_message_form_submission = new SFSF_MessageCreation();
         $simple_message_form_submission->simple_message_form_submission();
         
     }
@@ -59,23 +59,23 @@ class SF_AjaxHandler {
      * Form Delete
     */
     function simple_message_delete_form() {
-        $simple_message_delete_form = new SF_MessageCreation();
+        $simple_message_delete_form = new SFSF_MessageCreation();
         $simple_message_delete_form->simple_message_delete_form();
         
     }
     /**
      * Form Submission
     */
-    function sf_contact_form_submission() {
-        $sf_contact_form_submission = new SF_MessageCreation();
-        $sf_contact_form_submission->sf_contact_form_submission();
+    function SFSF_contact_form_submission() {
+        $SFSF_contact_form_submission = new SFSF_MessageCreation();
+        $SFSF_contact_form_submission->SFSF_contact_form_submission();
         
     }
     /**
      * Form EDIT
     */
     function edit_data_id() {
-        $edit_data_id = new SF_MessageCreation();
+        $edit_data_id = new SFSF_MessageCreation();
         $edit_data_id->edit_data_id();
         
     }

@@ -1,9 +1,9 @@
 <?php
 
 namespace Inc;
-use \Inc\SF_BaseController;
+use \Inc\SFSF_BaseController;
 
-class SF_Enqueue extends SF_BaseController{
+class SFSF_Enqueue extends SFSF_BaseController{
 
     function register(){
         add_action( 'admin_enqueue_scripts', array( $this, 'admin_enqueue' ) ); 
@@ -21,8 +21,8 @@ class SF_Enqueue extends SF_BaseController{
          */
         if("toplevel_page_simple_form" == $screen 
         ){
-            wp_enqueue_style( 'simple_form_admin_css', $this->plugin_url .'assets/admin/sf_admin_style.css');
-            wp_enqueue_script( 'simple_form_admin_js', $this->plugin_url .'assets/admin/sf_admin_script.js', array('jquery'),1.0,true );
+            wp_enqueue_style( 'simple_form_admin_css', $this->plugin_url .'assets/admin/SFSF_admin_style.css');
+            wp_enqueue_script( 'simple_form_admin_js', $this->plugin_url .'assets/admin/SFSF_admin_script.js', array('jquery'),1.0,true );
             wp_localize_script( 'simple_form_admin_js', 'show_user_inputed_data', array(
                 'ajaxurl'=>admin_url("admin-ajax.php", null)
                 ) );
@@ -66,12 +66,12 @@ class SF_Enqueue extends SF_BaseController{
             /**
              * Edit form 
              */
-            wp_register_script( 'sf_main_edit_js', $this->plugin_url . 'assets/admin/formfield/js/edit_form_data.js',array('jquery'),1.0,true );
-            wp_localize_script( 'sf_main_edit_js', 'edit_data_id', array(
+            wp_register_script( 'SFSF_main_edit_js', $this->plugin_url . 'assets/admin/formfield/js/edit_form_data.js',array('jquery'),1.0,true );
+            wp_localize_script( 'SFSF_main_edit_js', 'edit_data_id', array(
                 'ajaxurl'=>admin_url("admin-ajax.php", null)
             ) );
             wp_enqueue_script('jquery');
-            wp_enqueue_script('sf_main_edit_js');
+            wp_enqueue_script('SFSF_main_edit_js');
              /**
              * Delete
              */
@@ -115,9 +115,9 @@ class SF_Enqueue extends SF_BaseController{
      */
     public function public_enqueue(){
             wp_enqueue_script( 'simple_form_sweetalerts_js', $this->plugin_url . 'assets/admin/formfield/js/sweetalert2@11.js',array('jquery'),1.0,true );
-            wp_enqueue_style( 'simple_form_public_css',  $this->plugin_url .'assets/public/sf_public_style.css');
-            wp_enqueue_script( 'simple_form_public_js',  $this->plugin_url .'assets/public/sf_public_script.js', array('jquery'),1.0,true );
-            wp_localize_script( 'simple_form_public_js', 'sf_contact_form_submission', array(
+            wp_enqueue_style( 'simple_form_public_css',  $this->plugin_url .'assets/public/SFSF_public_style.css');
+            wp_enqueue_script( 'simple_form_public_js',  $this->plugin_url .'assets/public/SFSF_public_script.js', array('jquery'),1.0,true );
+            wp_localize_script( 'simple_form_public_js', 'SFSF_contact_form_submission', array(
                 'ajaxurl'=>admin_url("admin-ajax.php", null)
             ) );
             wp_enqueue_script('jquery');

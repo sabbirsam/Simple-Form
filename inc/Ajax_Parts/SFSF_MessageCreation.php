@@ -1,9 +1,9 @@
 <?php
 
 namespace Inc\Ajax_Parts;
-use \Inc\SF_BaseController;
+use \Inc\SFSF_BaseController;
 
-class SF_MessageCreation {
+class SFSF_MessageCreation {
 
     public function __construct() {
         /**
@@ -21,7 +21,7 @@ class SF_MessageCreation {
         /**
          * Form Submission
          */
-        $this->sf_contact_form_submission();
+        $this->SFSF_contact_form_submission();
         /**
          * Form EDIT
          */
@@ -35,7 +35,7 @@ class SF_MessageCreation {
 
         if ($_POST['action'] == 'show_user_inputed_data') {
 
-            $permission = check_ajax_referer('sf_delete_post_nonce', 'nonce', false);
+            $permission = check_ajax_referer('SFSF_delete_post_nonce', 'nonce', false);
     
             if ($permission) {
                 $df_delete_data = sanitize_text_field ($_POST['df_delete_data']);
@@ -143,7 +143,7 @@ class SF_MessageCreation {
 
         if ($_POST['action'] == 'simple_message_delete_form') {
            
-            $permission = check_ajax_referer('sf_delete_post_nonce', 'nonce', false);
+            $permission = check_ajax_referer('SFSF_delete_post_nonce', 'nonce', false);
     
             if ($permission) {
                 $df_delete_data = sanitize_text_field ($_POST['df_delete_data']);
@@ -184,12 +184,12 @@ class SF_MessageCreation {
              * Sanitize all drag drop data
              */
             $editID = sanitize_text_or_array_field($_POST['result']);
-            $sf_editID = $postID = isset($editID) ? intval($editID) : null;
+            $SFSF_editID = $postID = isset($editID) ? intval($editID) : null;
             global $wpdb;
             $wpdb->hide_errors();
             $table=$wpdb->prefix. 'simple_form_tables';
             $results = $wpdb->get_results(
-                "SELECT `form_fields` from $table WHERE id =$sf_editID"
+                "SELECT `form_fields` from $table WHERE id =$SFSF_editID"
             );
         
             foreach($results as $row)
@@ -200,8 +200,8 @@ class SF_MessageCreation {
             // echo $trimJson;
             echo($output_data);
             
-            // set_transient( 'sf_current_edit_data', $trimJson, 86400 );    
-            // set_transient( 'sf_current_edit_data', $trimJson, 300 );  
+            // set_transient( 'SFSF_current_edit_data', $trimJson, 86400 );    
+            // set_transient( 'SFSF_current_edit_data', $trimJson, 300 );  
             wp_die();
         }
 
@@ -210,9 +210,9 @@ class SF_MessageCreation {
     /**
      * Form Submission
      */
-    public function sf_contact_form_submission() {
+    public function SFSF_contact_form_submission() {
 
-        if ($_POST['action'] == 'sf_contact_form_submission') {
+        if ($_POST['action'] == 'SFSF_contact_form_submission') {
 
              /**
              * Sanitize function for array || object from the admin drag and drop data
@@ -248,7 +248,7 @@ class SF_MessageCreation {
             $date = sanitize_text_or_array_field($_POST['date']) ?? '';
             $myfile = sanitize_text_or_array_field($_POST['myfile']) ?? '';
 
-            $sf_user_data = array(
+            $SFSF_user_data = array(
                 'input'=>$input ?: false,
                 'number'=>$number ?: false,
                 'email'=>$email ?: false,
@@ -260,8 +260,8 @@ class SF_MessageCreation {
                 'myfile'=>$myfile ?: false,
             );
 
-            if ($sf_user_data) { 
-                $jdata= json_encode($sf_user_data , true);
+            if ($SFSF_user_data) { 
+                $jdata= json_encode($SFSF_user_data , true);
                 date_default_timezone_set('Asia/Dhaka');
                 $date = date('Y-m-d H:i:s');
                 global $wpdb;

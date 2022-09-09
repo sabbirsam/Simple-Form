@@ -30,18 +30,18 @@ if (file_exists(dirname(__FILE__).'/vendor/autoload.php')) {
 }
 
 
-use Inc\SF_Activate;
-use Inc\SF_Deactivate;
-use Inc\SF_Enqueue;
-use Inc\SF_AdminDashboard;
-use Inc\SF_BaseController;
-use Inc\SF_AjaxHandler;
-use Inc\SF_DbTables;
-use Inc\SF_SaveTablesData;
-use Inc\SF_SfShortcode;
+use Inc\SFSF_Activate;
+use Inc\SFSF_Deactivate;
+use Inc\SFSF_Enqueue;
+use Inc\SFSF_AdminDashboard;
+use Inc\SFSF_BaseController;
+use Inc\SFSF_AjaxHandler;
+use Inc\SFSF_DbTables;
+use Inc\SFSF_SaveTablesData;
+use Inc\SFSF_SfShortcode;
 
-if(!class_exists('SF_SimpleForm')){
-    class SF_SimpleForm{
+if(!class_exists('SFSF_SimpleForm')){
+    class SFSF_SimpleForm{
         public $simple_form_base;
         public function __construct(){
             $this->includes();
@@ -57,23 +57,23 @@ if(!class_exists('SF_SimpleForm')){
          * Classes 
          */
         public function includes() {
-            new SF_AdminDashboard(); 
-            $enqueue=new SF_Enqueue();
+            new SFSF_AdminDashboard(); 
+            $enqueue=new SFSF_Enqueue();
             $enqueue->register();
-            new SF_BaseController();
-            new SF_AjaxHandler();
-            $create_table = new SF_DbTables();
-            $save_table = new SF_SaveTablesData();
-            new SF_SfShortcode();
+            new SFSF_BaseController();
+            new SFSF_AjaxHandler();
+            $create_table = new SFSF_DbTables();
+            $save_table = new SFSF_SaveTablesData();
+            new SFSF_SfShortcode();
         }
         function activate(){   
-            SF_Activate::activate();
+            SFSF_Activate::activate();
         }
         function deactivate(){ 
-            SF_Deactivate::deactivate(); 
+            SFSF_Deactivate::deactivate(); 
         }
     }
-    $simpleform = new SF_SimpleForm;
+    $simpleform = new SFSF_SimpleForm;
     $simpleform ->register();
     
     register_activation_hook (__FILE__, array( $simpleform, 'activate' ) );

@@ -96,7 +96,7 @@
                                             href="admin.php?page=simple_form&id=<?php echo esc_html($values->id) ?>">View</a>
                                         <a class="dropdown-item delete_ticket"
                                             data-id="<?php echo esc_html($values->id); ?>"
-                                            data-nonce="<?php echo wp_create_nonce('sf_delete_post_nonce') ?>"
+                                            data-nonce="<?php echo wp_create_nonce('SFSF_delete_post_nonce') ?>"
                                             data-modal-delete-id="popup" class="sd_delete-post" href="#">Delete</a>
                                     </div>
                                 </div>

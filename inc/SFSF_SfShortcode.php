@@ -1,14 +1,14 @@
 <?php
 
 namespace Inc;
-use \Inc\SF_BaseController;
+use \Inc\SFSF_BaseController;
 
-class SF_SfShortcode extends SF_BaseController {
+class SFSF_SfShortcode extends SFSF_BaseController {
     function __construct(){
-        add_shortcode("sf_form", array($this, 'sf_form_shortcode'));
+        add_shortcode("SFSF_form", array($this, 'SFSF_form_shortcode'));
     }
 
-    public function sf_form_shortcode($atts){
+    public function SFSF_form_shortcode($atts){
         
         $shortcodeID = isset($atts['id']) ? intval($atts['id']) : null;
         global $wpdb;

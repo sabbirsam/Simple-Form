@@ -2,7 +2,7 @@
 
 namespace Inc;
 
-class SF_AdminDashboard{
+class SFSF_AdminDashboard{
     function __construct(){
         add_action("admin_menu", array($this, 'add_admin_pages'));
     }

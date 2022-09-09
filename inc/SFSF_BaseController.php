@@ -4,7 +4,7 @@
  */
 namespace Inc;
 
-class SF_BaseController
+class SFSF_BaseController
 {
     public $plugin_path;
     public $plugin_url;
