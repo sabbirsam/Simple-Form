@@ -29,15 +29,15 @@ if (file_exists(dirname(__FILE__).'/vendor/autoload.php')) {
     require_once dirname(__FILE__).'/vendor/autoload.php';
 }
 
-use Inc\SFSF_Activate;
-use Inc\SFSF_Deactivate;
-use Inc\SFSF_Enqueue;
-use Inc\SFSF_AdminDashboard;
-use Inc\SFSF_BaseController;
-use Inc\SFSF_AjaxHandler;
-use Inc\SFSF_DbTables;
-use Inc\SFSF_SaveTablesData;
-use Inc\SFSF_SfShortcode;
+use SFSF\Inc\SFSF_Activate;
+use SFSF\Inc\SFSF_Deactivate;
+use SFSF\Inc\SFSF_Enqueue;
+use SFSF\Inc\SFSF_AdminDashboard;
+use SFSF\Inc\SFSF_BaseController;
+use SFSF\Inc\SFSF_AjaxHandler;
+use SFSF\Inc\SFSF_DbTables;
+use SFSF\Inc\SFSF_SaveTablesData;
+use SFSF\Inc\SFSF_SfShortcode;
 
 if(!class_exists('SFSF_SimpleForm')){
     class SFSF_SimpleForm{

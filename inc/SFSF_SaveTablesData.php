@@ -1,6 +1,8 @@
 <?php
 
-namespace Inc;
+namespace SFSF\Inc;
+
+defined('ABSPATH') or die('Hey, what are you doing here? You silly human!');
 
 final class SFSF_SaveTablesData {
     private $connection;

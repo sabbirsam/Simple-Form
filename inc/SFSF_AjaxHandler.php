@@ -1,7 +1,9 @@
 <?php
 
-namespace Inc;
-use \Inc\Ajax_Parts\SFSF_MessageCreation;
+namespace SFSF\Inc;
+use \SFSF\Inc\Ajax_Parts\SFSF_MessageCreation;
+
+defined('ABSPATH') or die('Hey, what are you doing here? You silly human!');
 
 class SFSF_AjaxHandler {
 
@@ -11,18 +13,18 @@ class SFSF_AjaxHandler {
 
     public function events() {
         /* Demo check Creation */
-        add_action( 'wp_ajax_show_user_inputed_data', array( $this, 'message_creation' ) ); 
-        add_action("wp_ajax_nopriv_show_user_inputed_data", array( $this, "message_creation"));
+        add_action( 'wp_ajax_show_user_inputed_data', array( $this, 'sfsf_message_creation' ) ); 
+        add_action("wp_ajax_nopriv_show_user_inputed_data", array( $this, 'sfsf_message_creation'));
         /**
          * Form create
          */
-        add_action( 'wp_ajax_simple_message_form_submission', array( $this, 'simple_message_form_submission' ) ); 
-        add_action("wp_ajax_nopriv_simple_message_form_submission", array( $this, "simple_message_form_submission"));
+        add_action( 'wp_ajax_simple_message_form_submission', array( $this, 'sfsf_simple_message_form_submission' ) ); 
+        add_action("wp_ajax_nopriv_simple_message_form_submission", array( $this, 'sfsf_simple_message_form_submission'));
          /**
          * Form delete
          */
-        add_action( 'wp_ajax_simple_message_delete_form', array( $this, 'simple_message_delete_form' ) ); 
-        add_action("wp_ajax_nopriv_simple_message_delete_form", array( $this, "simple_message_delete_form"));
+        add_action( 'wp_ajax_simple_message_delete_form', array( $this, 'sfsf_simple_message_delete_form' ) ); 
+        add_action("wp_ajax_nopriv_simple_message_delete_form", array( $this, 'sfsf_simple_message_delete_form'));
          /**
          * Form Submission
          */
@@ -31,36 +33,36 @@ class SFSF_AjaxHandler {
         /**
          * Form EDIT
          */
-        add_action( 'wp_ajax_edit_data_id', array( $this, 'edit_data_id' ) ); 
-        add_action("wp_ajax_nopriv_edit_data_id", array( $this, "edit_data_id"));
+        add_action( 'wp_ajax_edit_data_id', array( $this, 'sfsf_edit_data_id' ) ); 
+        add_action("wp_ajax_nopriv_edit_data_id", array( $this, 'sfsf_edit_data_id'));
         /**
          * update EDIT Data
          */
-        add_action( 'wp_ajax_edit_data_id', array( $this, 'edit_data_id' ) ); 
-        add_action("wp_ajax_nopriv_edit_data_id", array( $this, "edit_data_id"));
+        add_action( 'wp_ajax_edit_data_id', array( $this, 'sfsf_edit_data_id' ) ); 
+        add_action("wp_ajax_nopriv_edit_data_id", array( $this, 'sfsf_edit_data_id'));
         
     }
 
     /**Demo check Creation */
-    function message_creation() {
-        $message_creation = new SFSF_MessageCreation();
-        $message_creation->message_creation();
+    function sfsf_message_creation() {
+        $sfsf_message_creation = new SFSF_MessageCreation();
+        $sfsf_message_creation->sfsf_message_creation();
         
     }
     /**
      * Form create
      */
-    function simple_message_form_submission() {
-        $simple_message_form_submission = new SFSF_MessageCreation();
-        $simple_message_form_submission->simple_message_form_submission();
+    function sfsf_simple_message_form_submission() {
+        $sfsf_simple_message_form_submission = new SFSF_MessageCreation();
+        $sfsf_simple_message_form_submission->sfsf_simple_message_form_submission();
         
     }
     /**
      * Form Delete
     */
-    function simple_message_delete_form() {
-        $simple_message_delete_form = new SFSF_MessageCreation();
-        $simple_message_delete_form->simple_message_delete_form();
+    function sfsf_simple_message_delete_form() {
+        $sfsf_simple_message_delete_form = new SFSF_MessageCreation();
+        $sfsf_simple_message_delete_form->sfsf_simple_message_delete_form();
         
     }
     /**
@@ -74,9 +76,9 @@ class SFSF_AjaxHandler {
     /**
      * Form EDIT
     */
-    function edit_data_id() {
-        $edit_data_id = new SFSF_MessageCreation();
-        $edit_data_id->edit_data_id();
+    function sfsf_edit_data_id() {
+        $sfsf_edit_data_id = new SFSF_MessageCreation();
+        $sfsf_edit_data_id->sfsf_edit_data_id();
         
     }
 
