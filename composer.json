@@ -5,7 +5,7 @@
     "license": "GPL",
     "autoload": {
         "psr-4": {
-            "Inc\\": "./inc"
+            "SFSF\\Inc\\": "./inc"
         }
     },
     "authors": [

@@ -1,7 +1,9 @@
 <?php
 
-namespace Inc\Ajax_Parts;
-use \Inc\SFSF_BaseController;
+namespace SFSF\Inc\Ajax_Parts;
+use \SFSF\Inc\SFSF_BaseController;
+
+defined('ABSPATH') or die('Hey, what are you doing here? You silly human!');
 
 class SFSF_MessageCreation {
 
@@ -9,15 +11,15 @@ class SFSF_MessageCreation {
         /**
          * Demo tets
          */
-        $this->message_creation();
+        $this->sfsf_message_creation();
         /**
          * Form Create
          */
-        $this->simple_message_form_submission();
+        $this->sfsf_simple_message_form_submission();
         /**
          * Form delete
          */
-        $this->simple_message_delete_form();
+        $this->sfsf_simple_message_delete_form();
         /**
          * Form Submission
          */
@@ -25,13 +27,13 @@ class SFSF_MessageCreation {
         /**
          * Form EDIT
          */
-        $this->edit_data_id();
+        $this->sfsf_edit_data_id();
     }
 
     /**
      * delete
      */
-    public function message_creation() {
+    public function sfsf_message_creation() {
 
         if ($_POST['action'] == 'show_user_inputed_data') {
 
@@ -52,7 +54,7 @@ class SFSF_MessageCreation {
     /**
      * Form Create
      */
-    public function simple_message_form_submission() {
+    public function sfsf_simple_message_form_submission() {
 
         if ($_POST['action'] == 'simple_message_form_submission') {
 
@@ -94,7 +96,7 @@ class SFSF_MessageCreation {
    
                 $jdata= json_encode($sanitizedData, true);
                
-                date_default_timezone_set('Asia/Dhaka');
+                
                 $date = date('Y-m-d H:i:s');
                 global $wpdb;
                 $table=$wpdb->prefix. 'simple_form_tables';
@@ -121,7 +123,7 @@ class SFSF_MessageCreation {
 
 
                 $up_data= json_encode($Data_update_result, true);         
-                date_default_timezone_set('Asia/Dhaka');
+                
                 $u_dates = date('Y-m-d H:i:s');
                 global $wpdb;
                 $table=$wpdb->prefix. 'simple_form_tables';
@@ -139,7 +141,7 @@ class SFSF_MessageCreation {
     /**
      * Form Delete
      */
-    public function simple_message_delete_form() {
+    public function sfsf_simple_message_delete_form() {
 
         if ($_POST['action'] == 'simple_message_delete_form') {
            
@@ -158,7 +160,7 @@ class SFSF_MessageCreation {
      /**
      * Form EDIT
      */
-    public function edit_data_id() {
+    public function sfsf_edit_data_id() {
 
         if ($_POST['action'] == 'edit_data_id') {
 
@@ -180,6 +182,11 @@ class SFSF_MessageCreation {
                 } 
                 return $array_or_string;
             }
+
+            function sfsf_escapping($sfsf_jsonData){
+                return $sfsf_jsonData;
+            }
+            
             /**
              * Sanitize all drag drop data
              */
@@ -197,11 +204,8 @@ class SFSF_MessageCreation {
             $udata= $row->form_fields;
             $trimJson = substr($udata, 1, strlen($udata) - 2);
             $output_data = sanitize_text_field($trimJson);
-            // echo $trimJson;
-            echo($output_data);
-            
-            // set_transient( 'SFSF_current_edit_data', $trimJson, 86400 );    
-            // set_transient( 'SFSF_current_edit_data', $trimJson, 300 );  
+            $res = sfsf_escapping($output_data);
+            echo wp_kses_data($res);
             wp_die();
         }
 
@@ -262,7 +266,7 @@ class SFSF_MessageCreation {
 
             if ($SFSF_user_data) { 
                 $jdata= json_encode($SFSF_user_data , true);
-                date_default_timezone_set('Asia/Dhaka');
+                // date_default_timezone_set('UTC');
                 $date = date('Y-m-d H:i:s');
                 global $wpdb;
                 $table=$wpdb->prefix. 'simple_form_tables_values';

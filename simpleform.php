@@ -22,22 +22,21 @@
  * 
  */
 
-
 defined('ABSPATH') or die('Hey, what are you doing here? You silly human!');
 
 if (file_exists(dirname(__FILE__).'/vendor/autoload.php')) {
     require_once dirname(__FILE__).'/vendor/autoload.php';
 }
 
-use Inc\SFSF_Activate;
-use Inc\SFSF_Deactivate;
-use Inc\SFSF_Enqueue;
-use Inc\SFSF_AdminDashboard;
-use Inc\SFSF_BaseController;
-use Inc\SFSF_AjaxHandler;
-use Inc\SFSF_DbTables;
-use Inc\SFSF_SaveTablesData;
-use Inc\SFSF_SfShortcode;
+use SFSF\Inc\SFSF_Activate;
+use SFSF\Inc\SFSF_Deactivate;
+use SFSF\Inc\SFSF_Enqueue;
+use SFSF\Inc\SFSF_AdminDashboard;
+use SFSF\Inc\SFSF_BaseController;
+use SFSF\Inc\SFSF_AjaxHandler;
+use SFSF\Inc\SFSF_DbTables;
+use SFSF\Inc\SFSF_SaveTablesData;
+use SFSF\Inc\SFSF_SfShortcode;
 
 if(!class_exists('SFSF_SimpleForm')){
     class SFSF_SimpleForm{
@@ -65,17 +64,15 @@ if(!class_exists('SFSF_SimpleForm')){
             $save_table = new SFSF_SaveTablesData();
             new SFSF_SfShortcode();
         }
-        function activate(){   
-            SFSF_Activate::activate();
+        function sfsf_activate(){   
+            SFSF_Activate::sfsf_activate();
         }
-        function deactivate(){ 
-            SFSF_Deactivate::deactivate(); 
+        function sfsf_deactivate(){ 
+            SFSF_Deactivate::sfsf_deactivate(); 
         }
     }
     $simpleform = new SFSF_SimpleForm;
     $simpleform ->register();
-    
-    register_activation_hook (__FILE__, array( $simpleform, 'activate' ) );
-    register_deactivation_hook (__FILE__, array( $simpleform, 'deactivate' ) );
-
+    register_activation_hook (__FILE__, array( $simpleform, 'sfsf_activate' ) );
+    register_deactivation_hook (__FILE__, array( $simpleform, 'sfsf_deactivate' ) );
 }

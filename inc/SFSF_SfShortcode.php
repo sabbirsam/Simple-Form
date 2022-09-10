@@ -1,7 +1,9 @@
 <?php
 
-namespace Inc;
-use \Inc\SFSF_BaseController;
+namespace SFSF\Inc;
+use \SFSF\Inc\SFSF_BaseController;
+
+defined('ABSPATH') or die('Hey, what are you doing here? You silly human!');
 
 class SFSF_SfShortcode extends SFSF_BaseController {
     function __construct(){
@@ -368,11 +370,5 @@ class SFSF_SfShortcode extends SFSF_BaseController {
 
     }
     
-        
-
-       
-
-        
-  
 
 }
