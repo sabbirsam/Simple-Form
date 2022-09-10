@@ -182,6 +182,11 @@ class SFSF_MessageCreation {
                 } 
                 return $array_or_string;
             }
+
+            function sfsf_escapping($sfsf_jsonData){
+                return $sfsf_jsonData;
+            }
+            
             /**
              * Sanitize all drag drop data
              */
@@ -199,7 +204,8 @@ class SFSF_MessageCreation {
             $udata= $row->form_fields;
             $trimJson = substr($udata, 1, strlen($udata) - 2);
             $output_data = sanitize_text_field($trimJson);
-            print_r($output_data);
+            $res = sfsf_escapping($output_data);
+            echo wp_kses_data($res);
             wp_die();
         }
 

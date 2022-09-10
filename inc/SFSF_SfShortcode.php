@@ -370,11 +370,5 @@ class SFSF_SfShortcode extends SFSF_BaseController {
 
     }
     
-        
-
-       
-
-        
-  
 
 }

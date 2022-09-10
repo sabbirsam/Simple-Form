@@ -9,23 +9,23 @@ defined('ABSPATH') or die('Hey, what are you doing here? You silly human!');
 class SFSF_Enqueue extends SFSF_BaseController{
 
     function register(){
-        add_action( 'admin_enqueue_scripts', array( $this, 'admin_enqueue' ) ); 
-        add_action( 'wp_enqueue_scripts', array( $this, 'public_enqueue' ) ); 
-        add_action( 'admin_enqueue_scripts', array( $this, 'core_enqueue' ) ); 
+        add_action( 'admin_enqueue_scripts', array( $this, 'sfsf_admin_enqueue' ) ); 
+        add_action( 'wp_enqueue_scripts', array( $this, 'sfsf_public_enqueue' ) ); 
+        add_action( 'admin_enqueue_scripts', array( $this, 'sfsf_core_enqueue' ) );
+
     }
 
-    public function core_enqueue($screen)
+    public function sfsf_core_enqueue($screen)
     {    
         if("toplevel_page_simple_form" == $screen || "simple-form_page_create_form" == $screen || "simple-form_page_form_data" == $screen){
-            wp_register_script('sfsf-simple-form-jquery-ui', $this->plugin_url .'assets/library/jquery-ui.min.js', null,1.0,true);
-            wp_enqueue_script('sfsf-simple-form-jquery-ui'); //
-            wp_enqueue_script('jQuery UI');
+             wp_enqueue_script( 'jquery-ui-sortable', false, array('jquery') );        
+             wp_enqueue_script( 'jquery-ui-tabs', false, array('jquery') );
         }
     
     }
 
 
-    public function admin_enqueue($screen){
+    public function sfsf_admin_enqueue($screen){
         /**
          * Global all screen loaded file
          */
@@ -123,7 +123,7 @@ class SFSF_Enqueue extends SFSF_BaseController{
      /**
      * Frontend form
      */
-    public function public_enqueue(){
+    public function sfsf_public_enqueue(){
             wp_enqueue_script( 'simple_form_sweetalerts_js', $this->plugin_url . 'assets/admin/formfield/js/sweetalert2@11.js',array('jquery'),1.0,true );
             wp_enqueue_style( 'simple_form_public_css',  $this->plugin_url .'assets/public/sf_public_style.css');
             wp_enqueue_script( 'simple_form_public_js',  $this->plugin_url .'assets/public/sf_public_script.js', array('jquery'),1.0,true );

@@ -22,7 +22,6 @@
  * 
  */
 
-
 defined('ABSPATH') or die('Hey, what are you doing here? You silly human!');
 
 if (file_exists(dirname(__FILE__).'/vendor/autoload.php')) {
@@ -65,17 +64,15 @@ if(!class_exists('SFSF_SimpleForm')){
             $save_table = new SFSF_SaveTablesData();
             new SFSF_SfShortcode();
         }
-        function activate(){   
-            SFSF_Activate::activate();
+        function sfsf_activate(){   
+            SFSF_Activate::sfsf_activate();
         }
-        function deactivate(){ 
-            SFSF_Deactivate::deactivate(); 
+        function sfsf_deactivate(){ 
+            SFSF_Deactivate::sfsf_deactivate(); 
         }
     }
     $simpleform = new SFSF_SimpleForm;
     $simpleform ->register();
-    
-    register_activation_hook (__FILE__, array( $simpleform, 'activate' ) );
-    register_deactivation_hook (__FILE__, array( $simpleform, 'deactivate' ) );
-
+    register_activation_hook (__FILE__, array( $simpleform, 'sfsf_activate' ) );
+    register_deactivation_hook (__FILE__, array( $simpleform, 'sfsf_deactivate' ) );
 }
