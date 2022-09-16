@@ -2,7 +2,7 @@
 /**
  * Plugin Name: Simple Form
  *
- * @author            Sabbir Sam
+ * @author            Sabbir Sam, devsabbirahmed
  * @copyright         2022- Sabbir Sam, Kevin Chappell from fromBuilder
  * @license           GPL-2.0-or-later
  *
@@ -10,7 +10,7 @@
  * Plugin Name: Simple Form
  * Plugin URI: https://github.com/sabbirsam/Simple-Form/tree/free
  * Description: It's a simple contact form that lets you easily create forms via drag and drop feature. Its also free to collect all leads from the created forms. This plugin is not yet officially made for selling, it is mainly made for learning.
- * Version:           1.0.0
+ * Version:           1.0.2
  * Requires at least: 5.9 or higher
  * Requires PHP:      5.4 or higher
  * Author:            SABBIRSAM
