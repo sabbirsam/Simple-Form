@@ -10,7 +10,7 @@
  * Plugin Name: Simple Form
  * Plugin URI: https://github.com/sabbirsam/Simple-Form/tree/free
  * Description: It's a simple contact form that lets you easily create forms via drag and drop feature. Its also free to collect all leads from the created forms. This plugin is not yet officially made for selling, it is mainly made for learning.
- * Version:           1.0.2
+ * Version:           1.0.3
  * Requires at least: 5.9 or higher
  * Requires PHP:      5.4 or higher
  * Author:            SABBIRSAM

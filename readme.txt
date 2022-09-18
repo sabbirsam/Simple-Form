@@ -4,7 +4,7 @@ Tags: simple-form, form, contact form, lead-form, form, social media
 Requires at least: 5.0 or higher
 Tested up to: 6.0.2
 Requires PHP: 5.4 or higher
-Stable Tag: 1.0.2
+Stable Tag: 1.0.3
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -15,6 +15,8 @@ Introducing Simple From to collect all the leads via a simple form makes life ea
 It's a simple contact form that lets you easily create forms via the drag-and-drop feature. You can use this form using a shortcode anywhere on your website. It's totally free to collect all leads from the created forms.
 Works across all operating systems including Android, iOS, and macOS. No settings are needed. 
 **[Made for educational purposes only]**
+
+[youtube https://www.youtube.com/watch?v=L6EmXREa6OA&rel=0]
 
 === Simple Form Features ===
 
