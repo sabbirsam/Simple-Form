@@ -44,7 +44,7 @@
                                         <th class="text-center"><?php echo esc_html($i++) ?></th>
                                         <th id="copy-id<?php echo esc_html($row->id)?>"
                                             class="text-center click-to-copy">
-                                            <?php echo "[SFSF_form id=".esc_html($row->id."]") ; ?></th>
+                                            <?php echo "[simple_form id=".esc_html($row->id."]") ; ?></th>
                                         <th class="text-center"><?php echo esc_html($row->form_name); ?></th>
                                         <td class="form_data_json">
                                             <b><?php echo date("M d, Y",strtotime(esc_html($row->time))) ?></b>

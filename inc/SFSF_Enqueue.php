@@ -124,7 +124,7 @@ class SFSF_Enqueue extends SFSF_BaseController{
      * Frontend form
      */
     public function sfsf_public_enqueue(){
-            wp_enqueue_script( 'simple_form_sweetalerts_js', $this->plugin_url . 'src/admin/formfield/js/sweetalert2@11.js',array('jquery'),1.0,true );
+            wp_enqueue_script( 'simple_form_sweetalerts_js', $this->plugin_url . 'src/library/sweetalert2@11.js',array('jquery'),1.0,true );
             wp_enqueue_style( 'simple_form_public_css',  $this->plugin_url .'src/public/sf_public_style.css');
             wp_enqueue_script( 'simple_form_public_js',  $this->plugin_url .'src/public/sf_public_script.js', array('jquery'),1.0,true );
             wp_localize_script( 'simple_form_public_js', 'SFSF_contact_form_submission', array(

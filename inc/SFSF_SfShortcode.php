@@ -7,10 +7,10 @@ defined('ABSPATH') or die('Hey, what are you doing here? You silly human!');
 
 class SFSF_SfShortcode extends SFSF_BaseController {
     function __construct(){
-        add_shortcode("SFSF_form", array($this, 'SFSF_form_shortcode'));
+        add_shortcode("simple_form", array($this, 'simple_form_shortcode'));
     }
 
-    public function SFSF_form_shortcode($atts){
+    public function simple_form_shortcode($atts){
         
         $shortcodeID = isset($atts['id']) ? intval($atts['id']) : null;
         global $wpdb;
