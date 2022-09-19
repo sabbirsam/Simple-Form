@@ -95,12 +95,17 @@ class SFSF_MessageCreation {
             if ($sanitizedData) {
    
                 $jdata= json_encode($sanitizedData, true);
+                
+                /**
+                 * Remove extra bracket as remove here so no need to remove from edit
+                 */
+                $trimJson = substr($jdata, 1, strlen($jdata) - 2);
                
                 
                 $date = date('Y-m-d H:i:s');
                 global $wpdb;
                 $table=$wpdb->prefix. 'simple_form_tables';
-                $data = array('form_name' => $formData, 'form_fields' => $jdata, 'time' => $date);
+                $data = array('form_name' => $formData, 'form_fields' => $trimJson, 'time' => $date);
                 $format = array('%s','%s');
                 $wpdb->insert($table,$data,$format);
                 $save = $wpdb->insert_id;
@@ -122,12 +127,17 @@ class SFSF_MessageCreation {
                 $Data_update_result = isset( $S_update_data )?  $S_update_data:'';
 
 
-                $up_data= json_encode($Data_update_result, true);         
+                $up_data= json_encode($Data_update_result, true);   
+                    /**
+                 * Remove extra bracket as remove here so no need to remove from edit
+                 */
+                $trimJson = substr($up_data, 1, strlen($up_data) - 2);
+                      
                 
                 $u_dates = date('Y-m-d H:i:s');
                 global $wpdb;
                 $table=$wpdb->prefix. 'simple_form_tables';
-                $u_data = array('form_name' => $Data_Name, 'form_fields' => $up_data, 'time' => $u_dates);
+                $u_data = array('form_name' => $Data_Name, 'form_fields' => $trimJson, 'time' => $u_dates);
                 $condition = array('id'=>$Data_ID); 
                 $wpdb->update($table,$u_data,$condition); 
                 $save = $wpdb->insert_id;  
@@ -202,8 +212,13 @@ class SFSF_MessageCreation {
             foreach($results as $row)
             {   }
             $udata= $row->form_fields;
-            $trimJson = substr($udata, 1, strlen($udata) - 2);
-            $output_data = sanitize_text_field($trimJson);
+
+
+            //Its commented as removed extra bracket from above
+            // $trimJson = substr($udata, 1, strlen($udata) - 2);
+            // $output_data = sanitize_text_field($trimJson);
+            
+            $output_data = sanitize_text_field($udata);
             $res = sfsf_escapping($output_data);
             echo wp_kses_data($res);
             wp_die();
